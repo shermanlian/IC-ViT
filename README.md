@@ -2,7 +2,7 @@
 Code for the paper: "Isolated Channel Vision Transformers: From Single-Channel Pretraining to Multi-Channel Finetuning"
 
 <p align="center">
-    <img src="images/overview.png" width="45%"> <br>
+    <img src="images/overview.png" width="65%"> <br>
 </p>
 
 ## Setup
