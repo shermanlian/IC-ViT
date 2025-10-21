@@ -1,7 +1,5 @@
 # IC-ViT
-Code for the paper: "Isolated Channel Vision Transformers: From Single-Channel Pretraining to Multi-Channel Finetuning"
-
-[[`Conference Link`](tbu)] [[`BibTeX`](#Citations)] [[`Preprint`](https://arxiv.org/pdf/2503.09826)]
+Code for the paper: "Isolated Channel Vision Transformers: From Single-Channel Pretraining to Multi-Channel Finetuning" [[`Preprint`](https://arxiv.org/pdf/2503.09826)]
 
 <p align="center">
     <img src="images/overview.png" width="65%"> <br>
