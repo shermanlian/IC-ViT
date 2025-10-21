@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#SBATCH -A xxxxxx
+#SBATCH -N 1 --gpus-per-node=A100:2
+#SBATCH -t 1-00:00:00
+
+echo "START TIME: $(date)"
+
+OMP_NUM_THREADS=8 torchrun --nnodes=1 --nproc_per_node=2 train_dino.py --batch-size 512 --image-size 32 --local_crops_number 0 --run-name clean-code-test --epochs 201 --saveckp-freq 100
+python convert_dino_checkpoint.py
+
+echo "END TIME: $(date)"
