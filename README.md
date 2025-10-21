@@ -41,6 +41,10 @@ OMP_NUM_THREADS=8 torchrun --nnodes=1 --nproc_per_node=2 \
 # Convert the pretrained checkpoint to downstream format
 python convert_dino_checkpoint.py
 ```
+
+ 📦 **Pretrained Checkpoints:**  
+ Available on [Google Drive](https://drive.google.com/drive/folders/1471sonfoHd942N3-9quDcmwT1Tdu7wd7)
+ 
 ## Finetuning
 
 This code automatically logs metrics for each dataset and epoch using **Weights & Biases (wandb)**.
@@ -66,9 +70,6 @@ python icvit/main/main_supervised.py \
     transformations@val_transformations=cell
 ```
 
-
-## Checkpoints
-tbu
 
 ## Acknowledgements
 - The implementation of the ChannelViT model and the dataloaders for So2Sat and JUMP-CP are adapted from the official [ChannelViT](https://github.com/insitro/ChannelViT) repository.
