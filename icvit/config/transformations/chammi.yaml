@@ -1,0 +1,4 @@
+# Configurations for the data transformations
+name: CHAMMIAugmentation
+args:
+  img_size: 224

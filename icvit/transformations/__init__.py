@@ -1,0 +1,7 @@
+from icvit.transformations.camelyon_dino import CamelyonAugmentationDino
+from icvit.transformations.cell import CellAugmentation
+from icvit.transformations.cell_dino import CellAugmentationDino
+from icvit.transformations.imagenet_dino import ImagenetAugmentationDino
+from icvit.transformations.rgb import RGBAugmentation
+from icvit.transformations.so2sat import So2SatAugmentation
+# from icvit.transformations.chammi import CHAMMIAugmentation

@@ -1,0 +1,35 @@
+jumpcp:
+  name: JUMPCP
+  args:
+    cyto_mask_path_list:
+      - "/jumpcp/BR00116991.pq"
+
+    perturbation_list:
+      - compound
+      
+    split: train
+
+    channels:
+      - 0  #Mito
+      - 1  #AGP
+      - 2  #RNA
+      - 3  #ER
+      - 4  #DNA
+      - 5  #HighZBF
+      - 6  #LowZBF
+      - 7  #Brightfield
+
+    channel_mask: False
+    scale: 1
+    n_channels: 8
+
+  # training data loader configuration
+  loader:
+    num_workers: 32
+    batch_size: 32
+    pin_memory: True
+    drop_last: False
+    shuffle: True
+
+  output_dir: null
+

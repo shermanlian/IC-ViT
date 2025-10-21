@@ -1,0 +1,31 @@
+jumpcp_test:
+  name: JUMPCP
+  args:
+    cyto_mask_path_list:
+      - "/jumpcp/BR00116991.pq"
+    perturbation_list:
+      - compound
+      
+    split: test
+
+    channels:
+      - 0  #Mito
+      - 1  #AGP
+      - 2  #RNA
+      - 3  #ER
+      - 4  #DNA
+
+    scale: 1  # scale the input to compensate for channel masking
+    channel_mask: False
+    n_channels: 5
+
+  # training data loader configuration
+  loader:
+    num_workers: 32
+    batch_size: 32
+    pin_memory: True
+    drop_last: False
+    shuffle: False
+
+  output_dir: null
+
