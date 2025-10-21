@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+#SBATCH -A xxxxx -p alvis
+#SBATCH -N 1 --gpus-per-node=A100:2 
+#SBATCH -t 1-00:00:00
+
+source ~/.bashrc
+
+conda activate icvit
+pip uninstall icvit
+pip install .
+
+echo "START TIME: $(date)"
+
+python icvit/main/main_supervised.py \
+    trainer.devices=2 \
+    trainer.max_epochs=100 \
+    meta_arch/backbone=icvit_small \
+    meta_arch.backbone.args.in_chans=8 \
+    meta_arch.backbone.args.patch_size=16 \
+    meta_arch.backbone.checkpoint=../dino-imagenet/checkpoints/jumpcp_checkpoint0100.pth\
+    meta_arch.target='label' \
+    meta_arch.num_classes=161 \
+    data@train_data=jumpcp \
+    data@val_data_dict=[jumpcp_val_fl,jumpcp_test_fl] \
+    train_data.jumpcp.loader.batch_size=32 \
+    transformations@train_transformations=cell \
+    transformations@val_transformations=cell
+
+echo "END TIME: $(date)"
